@@ -30,5 +30,5 @@ public abstract class Employee extends Person{
         this.grossSalary = grossSalary;
     }
 
-    public abstract double getNessySalary();
+    public abstract double getNetSalary();
 }
