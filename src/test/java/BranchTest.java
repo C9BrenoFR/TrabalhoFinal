@@ -44,4 +44,10 @@ class BranchTest {
         branch.addEmployee(employee);
         assertEquals("Fulano,", branch.getEmployeesNames());
     }
+
+    @Test
+    void naoDeveretornarNomeDeFuncionarios(){
+        Branch branch = new Branch("Leitura");
+        assertEquals("Sem empregados nessa unidade", branch.getEmployeesNames());
+    }
 }
