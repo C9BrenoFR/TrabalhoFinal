@@ -1,10 +1,11 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Manager {
+public class Manager extends Employee{
     private ArrayList<Attendant> attendants;
 
-    public Manager(ArrayList<Attendant> attendants) {
-        this.attendants = attendants;
+    public Manager(String name, LocalDate birthDay, Branch branch, double grossSalary) {
+        super(name, birthDay, branch, grossSalary);
     }
 
     public ArrayList<Attendant> getAttendants() {
