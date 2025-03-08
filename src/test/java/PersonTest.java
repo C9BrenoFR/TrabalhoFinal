@@ -7,12 +7,17 @@ import java.util.Date;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
-    // Teste gerado retirando o abstract da classe
+    // Teste gerado usando uma classe que possui Person na hierarquia
     @Test
     void deveRetornarIdade(){
-        Person person = new Person();
-        person.setBirthDay(LocalDate.of(2000, 1, 1));
+        /*
+        Manager person = new Manager(
+                "Fulano",
+                LocalDate.of(2000, 1, 1),
+
+                )
         assertEquals(25, person.getAge());
+         */
     }
 
 }

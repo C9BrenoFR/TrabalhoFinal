@@ -1,9 +1,14 @@
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Person {
+public abstract class Person {
     private String name;
     private LocalDate birthDay;
+
+    public Person(String name, LocalDate birthDay) {
+        this.name = name;
+        this.birthDay = birthDay;
+    }
 
     public String getName() {
         return name;
