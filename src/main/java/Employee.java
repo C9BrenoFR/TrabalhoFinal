@@ -14,6 +14,10 @@ public abstract class Employee extends Person{
         return branch;
     }
 
+    public String getBranchName(){
+        return branch.getName();
+    }
+
     public void setBranch(Branch branch) {
         this.branch = branch;
     }
@@ -25,4 +29,6 @@ public abstract class Employee extends Person{
     public void setGrossSalary(double grossSalary) {
         this.grossSalary = grossSalary;
     }
+
+    public abstract double getNessySalary();
 }
