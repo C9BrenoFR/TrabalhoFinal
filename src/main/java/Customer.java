@@ -52,7 +52,7 @@ public class Customer extends Person {
 
     public void rent(Book book, LocalDate day){
         if(!canRent())
-            throw new IllegalArgumentException("Esse cliente ja alugou: " + rent.getBook().getName());
+            throw new IllegalArgumentException("Esse cliente ja alugou: " + rent.getBookName());
         rent = new Rent(this, book, day);
     }
 
