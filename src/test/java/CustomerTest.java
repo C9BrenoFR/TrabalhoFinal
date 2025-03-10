@@ -6,24 +6,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerTest {
 
-    private static final Publisher PUBLISHER = new Publisher("Galera");
-    private static final Book BOOK = new Book("Dracula", 400,"Bram Stoker", PUBLISHER);
-    private static final LocalDate DATE = LocalDate.of(2025,1,1);
-    private static final LocalDate BIRTHDAY = LocalDate.of(2000,1,1);
-
     @Test
     void deveAlugarLivro(){
-        Customer customer = new Customer("Fulano", BIRTHDAY);
-        customer.rent(BOOK, DATE);
+        Customer customer = new Customer("Fulano", TestConstants.BIRTHDAY);
+        customer.rent(TestConstants.BOOK, TestConstants.DATE);
         assertFalse(customer.canRent());
     }
 
     @Test
     void naoDeveAlugarLivroSeJaAlugou(){
         try {
-            Customer customer = new Customer("Fulano", BIRTHDAY);
-            customer.rent(BOOK, DATE);
-            customer.rent(BOOK, DATE);
+            Customer customer = new Customer("Fulano", TestConstants.BIRTHDAY);
+            customer.rent(TestConstants.BOOK, TestConstants.DATE);
+            customer.rent(TestConstants.BOOK, TestConstants.DATE);
             fail();
         }catch (IllegalArgumentException e){
             assertEquals("Esse cliente ja alugou: Dracula", e.getMessage());
@@ -32,8 +27,8 @@ class CustomerTest {
 
     @Test
     void deveRetornarLivro(){
-        Customer customer = new Customer("Fulano", BIRTHDAY);
-        customer.rent(BOOK, DATE);
+        Customer customer = new Customer("Fulano", TestConstants.BIRTHDAY);
+        customer.rent(TestConstants.BOOK, TestConstants.DATE);
         customer.returnRent();
         assertTrue(customer.canRent());
     }
@@ -41,7 +36,7 @@ class CustomerTest {
     @Test
     void naoDeveRetornarLivroSeNaoAlugou(){
         try {
-            Customer customer = new Customer("Fulano", BIRTHDAY);
+            Customer customer = new Customer("Fulano", TestConstants.BIRTHDAY);
             customer.returnRent();
             fail();
         }catch (IllegalArgumentException e){
@@ -51,16 +46,16 @@ class CustomerTest {
 
     @Test
     void deveRetornarOValorDoAlugel(){
-        Customer customer = new Customer("Fulano", BIRTHDAY);
-        customer.rent(BOOK, DATE);
-        assertEquals(15, customer.returnRentValue(DATE.plusDays(10)));
+        Customer customer = new Customer("Fulano", TestConstants.BIRTHDAY);
+        customer.rent(TestConstants.BOOK, TestConstants.DATE);
+        assertEquals(15, customer.returnRentValue(TestConstants.DATE.plusDays(10)));
     }
 
     @Test
     void naoDeveRetornarOValorDoAlugel(){
         try{
-            Customer customer = new Customer("Fulano", BIRTHDAY);
-            customer.returnRentValue(DATE);
+            Customer customer = new Customer("Fulano", TestConstants.BIRTHDAY);
+            customer.returnRentValue(TestConstants.DATE);
             fail();
         }catch (IllegalArgumentException e){
             assertEquals("Esse cliente ainda não alugou nada", e.getMessage());
@@ -69,8 +64,8 @@ class CustomerTest {
 
     @Test
     void deveComprarLivro(){
-        Customer customer = new Customer("Fulano", BIRTHDAY);
-        customer.buy(BOOK, 200.99);
-        assertTrue(customer.searchPurchase(BOOK));
+        Customer customer = new Customer("Fulano", TestConstants.BIRTHDAY);
+        customer.buy(TestConstants.BOOK, 200.99);
+        assertTrue(customer.searchPurchase(TestConstants.BOOK));
     }
 }
