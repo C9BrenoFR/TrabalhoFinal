@@ -58,6 +58,10 @@ public class Book {
         return publisher;
     }
 
+    public String getPublisherName(){
+        return publisher.getName();
+    }
+
     public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
     }

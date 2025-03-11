@@ -21,7 +21,29 @@ public class Publisher {
         return books;
     }
 
+    public String getBooksName(){
+        if(books.isEmpty())
+            return "Editora sem livros";
+        StringBuilder names = new StringBuilder();
+        for(Book book : books){
+            names.append(book.getName()).append(",");
+        }
+        return names.toString();
+    }
+
     public void setBooks(ArrayList<Book> books) {
         this.books = books;
+    }
+
+    public void addBook(Book book){
+        books.add(book);
+    }
+
+    public void removeBook(Book book){
+        books.remove(book);
+    }
+
+    public boolean searchBook(Book book){
+        return books.contains(book);
     }
 }
