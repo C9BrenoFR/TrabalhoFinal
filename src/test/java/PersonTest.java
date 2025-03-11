@@ -15,7 +15,7 @@ class PersonTest {
                 branch,
                 1200
         );
-        assertEquals(25, person.getAge());
+        assertEquals(LocalDate.now().getYear() - 2000, person.getAge());
     }
 
 }

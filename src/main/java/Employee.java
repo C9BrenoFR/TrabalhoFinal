@@ -6,6 +6,8 @@ public abstract class Employee extends Person{
 
     public Employee(String name, LocalDate birthDay, Branch branch, double grossSalary) {
         super(name, birthDay);
+        if(grossSalary <= 0)
+            throw new IllegalArgumentException("O salario precisa ser maior que 0");
         this.branch = branch;
         this.grossSalary = grossSalary;
     }

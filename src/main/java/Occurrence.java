@@ -5,6 +5,8 @@ public class Occurrence {
     private LocalDate date;
 
     public Occurrence(double value, LocalDate date) {
+        if(value <= 0)
+            throw new IllegalArgumentException("O valor precisa ser maior que 0");
         this.value = value;
         this.date = date;
     }
