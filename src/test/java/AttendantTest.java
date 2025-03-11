@@ -36,13 +36,13 @@ class AttendantTest {
         3 no mesmo ano em que o teste rodar mas em outro mês
         */
 
-        Ocurrence ocurrenceSameDate = new Ocurrence(300, LocalDate.now());
-        Ocurrence ocurrenceSameMonth = new Ocurrence(300, LocalDate.of(1900, LocalDate.now().getMonthValue(), 1));
-        Ocurrence ocurrenceSameYear = new Ocurrence(300, LocalDate.of(LocalDate.now().getYear(), 1, 1));
+        Occurrence occurrenceSameDate = new Occurrence(300, LocalDate.now());
+        Occurrence occurrenceSameMonth = new Occurrence(300, LocalDate.of(1900, LocalDate.now().getMonthValue(), 1));
+        Occurrence occurrenceSameYear = new Occurrence(300, LocalDate.of(LocalDate.now().getYear(), 1, 1));
 
-        attendant.addOcurence(ocurrenceSameDate);
-        attendant.addOcurence(ocurrenceSameMonth);
-        attendant.addOcurence(ocurrenceSameYear);
+        attendant.addOcurence(occurrenceSameDate);
+        attendant.addOcurence(occurrenceSameMonth);
+        attendant.addOcurence(occurrenceSameYear);
 
         assertEquals(1300, attendant.getNetSalary());
     }

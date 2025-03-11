@@ -1,10 +1,10 @@
 import java.time.LocalDate;
 
-public class Ocurrence {
+public class Occurrence {
     private double value;
     private LocalDate date;
 
-    public Ocurrence(double value, LocalDate date) {
+    public Occurrence(double value, LocalDate date) {
         this.value = value;
         this.date = date;
     }
